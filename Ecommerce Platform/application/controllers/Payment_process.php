@@ -8,47 +8,62 @@
 
 class Payment_process extends CI_Controller
 {
+    var $category=array();
+    var $data=array();
+    public function __construct()
+    {
+        parent::__construct();
+        $this->load->model("crud_operations");
+        $this->category["men"]=$this->crud_operations->fetch_data_men();
+        $this->category["Womens"]=$this->crud_operations->fetch_data_women();
+        $this->category["kids"]=$this->crud_operations->fetch_data_kid();
+        $this->category["home"]=$this->crud_operations->fetch_data_home();
+
+    }
     public function payment_methods()
     {
-        $this->load->view('display_payment_methods');
+        $category=$this->category;
+        $this->load->view('header',$category);
+        $this->load->view('payment_gateway');
+        $this->load->view('footer1');
     }
     public function cards()
     {
-        $this->load->view('display_payment_methods');
-        $this->load->view('payment_card');
+        $category=$this->category;
+        $this->load->view('header',$category);
+        $this->load->view('payment_gateway');
+        $this->load->view('payment');
+        $this->load->view('footer1');
 
     }
     public function net_banking()
     {
-        $this->load->view('display_payment_methods');
+        $category=$this->category;
+        $this->load->view('header',$category);
+        $this->load->view('payment_gateway');
         $this->load->view('payment_netbanking');
+        $this->load->view('footer1');
     }
     public function wallets()
     {
-        $this->load->view('display_payment_methods');
+        $category=$this->category;
+        $this->load->view('header',$category);
+        $this->load->view('payment_gateway');
         $this->load->view('payment_wallets');
+        $this->load->view('footer1');
     }
     public function cash_on_delivery()
     {
-        $this->load->view('display_payment_methods');
-        echo "<h3>cash on delivery</h3>";?>
-
-         <?=anchor('Payment_process/invoice', 'Generate Invoice');?>
-    <?php
+        $category=$this->category;
+        $this->load->view('header',$category);
+        $this->load->view('payment_gateway');
+        $this->load->view('generate_invoice');
+        $this->load->view('footer1');
     }
     public function validate_card()
     {
-        $this->form_validation->set_rules('card_number','Card Number','required');
-        $this->form_validation->set_rules('cvv','CVV','required');
-        $this->form_validation->set_rules('card_holder_name','Card holder name','required');
-        $this->form_validation->set_rules('valid','Valid','required');
-        if($this->form_validation->run())
-        {
-            $this->load->view('payment_gateway_page');
-        }
-        else
-        {
-            $this->cards();
-        }
+       
+        $this->load->view('payment_gateway_page');
+        
     }
 }

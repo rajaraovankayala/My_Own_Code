@@ -17,7 +17,7 @@ class Newuser_controller extends CI_Controller
     {
         $this->form_validation->set_rules('username','Username','required');
         $this->form_validation->set_rules('phone','Phone Number','required');
-        $this->form_validation->set_rules('email','Email','required');
+        $this->form_validation->set_rules('email','Email','required|valid_email');
         $this->form_validation->set_rules('house_no','House_no','required');
         $this->form_validation->set_rules('city','City','required');
         $this->form_validation->set_rules('country','Country','required');
@@ -39,7 +39,10 @@ class Newuser_controller extends CI_Controller
                           );
             if($this->crud_operations->getuserdetails($data))
             {
-                echo "successfully registered";
+                echo "successfully registered<br/>";
+                ?>
+                <?=anchor('Login_controller', 'Login');?><br/>
+            <?php
             }
         }
         else

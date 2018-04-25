@@ -58,7 +58,7 @@ class crud_operations extends CI_Model
     }
     public function get_category_wise_products($category_name,$sub_category)
     {
-        $this->db->select('picture,product_id,product_name');
+        $this->db->select('picture,product_id,product_name,unit_price');
         $this->db->from('products');
         $this->db->where('category',$category_name);
         $this->db->where('sub_category',$sub_category);
@@ -77,5 +77,32 @@ class crud_operations extends CI_Model
         $insert_query=$this->db->insert('products',$upload_data);
         return $insert_query;
     }
+    public function insert_product_to_cart($product_id)
+    {
+        $username=$this->session->userdata('username');
+        $data=array(
+                'username' => $username,
+                'product_id' => $product_id
+        );
+        $this->db->set($data);
+        $result=$this->db->insert('cart');
+        return $result;
+    }
+    public function display_cart_products()
+    {
+        $username=$this->session->userdata('username');
+        $this->db->select('*');
+        $this->db->from('products');
+        $this->db->join('cart','cart.product_id=products.product_id');
+        $this->db->where('username',$username);
+        $res=$this->db->get();
+        return $res;
+    }
+    function get_product($productid)
+    {
+        $this->db->where('product_id',$productid);
+        $query=$this->db->get('products');
+        return $query->result();
 
+    }
 }

@@ -11,7 +11,7 @@ class Login_controller extends CI_Controller
     public function index()
     {
         $this->load->view('login');?>
-         <?=anchor('Newuser_controller/newuser', 'New User');?>
+        
         <?php
     }
     public function validate_login()
@@ -31,7 +31,7 @@ class Login_controller extends CI_Controller
                );
                $this->session->set_userdata($session_data);
                redirect('Main_controller');
-               echo "good";
+			   		   
            }
            else
            {

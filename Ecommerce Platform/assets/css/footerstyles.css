@@ -1,0 +1,129 @@
+.footer-bs
+{
+    width: 100%;
+    background-color:whitesmoke;
+    color:rgb(63, 59, 59);
+    font-family:"Trebuchet MS";
+
+
+}
+.main-box{
+
+
+
+        padding-left:50px;
+}
+
+.footer-bs .footer-social a
+{
+    color:lightgrey;
+}
+.footer-bs .footer-social li
+{
+    padding:4px 5px;
+    font-size:16px;
+}
+.footer-bs .footer-social ul
+{
+    padding-top:16px;
+}
+.footer-bs .footer-nav li
+{
+    padding:4px 5px;
+}
+.footer-bs .footer-nav a
+{
+    color:rgb(63, 59, 59);
+    font-size: 16px;
+}
+.footer-bs .footer-nav ul
+{
+    padding-top:10px;
+}
+
+.footer-bs .footer-nav ul li
+{
+    list-style:none;
+}
+.footer-bs .footer-brand li
+{
+    padding:4px 5px;
+}
+.footer-bs .footer-brand a
+{
+    color:rgb(63, 59, 59);
+    font-size: 16px;
+
+}
+.footer-bs .footer-brand ul
+{
+    padding-top:10px;
+}
+.footer-bs .footer-brand li
+{
+    list-style:none;
+}
+.footer-bs .footer-nav li
+{
+    list-style: none;
+    padding:4px 5px;
+    font-size:16px;
+}
+.footer-bs .footer-brand a:hover
+{
+    color:white;
+    text-decoration: none;
+}
+.footer-bs .footer-nav a:hover
+{
+    color:white;
+    text-decoration: none;
+}
+.footer-bs .footer-social a:hover
+{
+    color:royalblue;
+    text-decoration: none;
+}
+.footer-bs .bottom-row
+{
+    font-size:14px;
+    margin-left: 140px;
+    margin-top: 40px;
+    text-align: center;
+}
+.copyright-box
+{
+    font-size:12px;
+    /*margin-left: 350px;*/
+    margin-top: 30px;
+    text-align: center;
+}
+.socialbar
+{
+    margin-top:-30px;
+    margin-left: 80px;
+}
+.footer-bs .footer-social
+{
+    margin-left:-120px;
+}
+.footer-bs .footer-ns
+{
+    float:right;
+}
+.footer-bs .footer-nav
+{
+    margin-top: 2px;
+}
+.footer-bs .footer-nav
+{
+    margin-top: 2px;
+}
+.footer-bs .footer-social .socialbar a
+{
+    color:darkslategray;
+}
+i
+{
+    color:darkslategray;
+}
